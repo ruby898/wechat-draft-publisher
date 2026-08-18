@@ -1,3 +1,4 @@
 .env
 __pycache__/
 draft_preview.html
+.DS_Store

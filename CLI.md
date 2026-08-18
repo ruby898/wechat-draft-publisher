@@ -27,7 +27,7 @@ python3 wechat_draft.py --file 文章.md --publish
 | `--dry-run` | 只生成预览 HTML，不联网 |
 | `--force` | 有图片占位但找不到文件时也继续 |
 | `--publish` | 进草稿箱后直接发布（二次确认） |
-| `--comment 0\|1` / `--only-fans 0\|1` | 评论设置，默认 0 |
+| `--comment 0\|1` / `--only-fans 0\|1` | 评论设置，comment 默认 1（打开），only-fans 默认 0 |
 | `--font-size` / `--line-height` / `--letter-spacing` / `--para-margin` | 排版参数，默认 16px / 1.75 / 1px / 24px |
 | `--keep-h1` | 保留正文开头与标题重复的 H1（默认去掉） |
 | `--check-ip` | 只打印本机公网 IP |

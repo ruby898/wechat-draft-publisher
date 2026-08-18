@@ -32,7 +32,7 @@
     --publish         进草稿箱后调用发布接口直接发布（会二次确认）
     --dry-run         只生成 HTML 预览文件，不联网
     --force           正文有【截图/配图/图片】占位但找不到图片文件时也继续
-    --comment 0|1     是否打开评论，默认 0
+    --comment 0|1     是否打开评论，默认 1（默认打开）
     --only-fans 0|1   是否仅粉丝可评论，默认 0
     --env PATH        .env 文件路径（默认仓库根目录 .env）
     --token TEXT      手动提供 access_token（跳过自动获取）
@@ -546,7 +546,7 @@ def main():
     ap.add_argument("--publish", action="store_true", help="进草稿箱后直接发布（会二次确认）")
     ap.add_argument("--dry-run", action="store_true", help="只生成 HTML 预览，不联网")
     ap.add_argument("--force", action="store_true", help="有占位但找不到图片文件时也继续")
-    ap.add_argument("--comment", type=int, choices=[0, 1], default=0, help="是否打开评论（默认 0）")
+    ap.add_argument("--comment", type=int, choices=[0, 1], default=1, help="是否打开评论（默认 1，即打开）")
     ap.add_argument("--only-fans", type=int, choices=[0, 1], default=0, help="是否仅粉丝可评论（默认 0）")
     ap.add_argument("--env", help=".env 文件路径（默认仓库根目录 .env）")
     ap.add_argument("--token", help="手动提供 access_token（跳过自动获取）")
