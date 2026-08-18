@@ -24,6 +24,8 @@
 
 三生态共用同一份 `skill/wechat-draft-publisher/`，只是放的地方不同。
 
+> `mkdir -p` 只是确保目录存在：不存在就创建，已存在就跳过，**不会删除或覆盖任何已有文件**，可以放心执行。
+
 ### Codex
 
 ```bash
@@ -42,17 +44,14 @@ cp -r skill/wechat-draft-publisher ~/.claude/skills/
 
 ### DeepSeek Harness
 
-DSH 与 Claude Code 同源（都基于 Anthropic agent-skill 规范），SKILL.md 格式通用，已实测可用。skill 根目录按优先级扫描：
-
-- 项目级：`<项目根>/.dsh/skills/`（项目根 = 最近的 .git 目录）
-- 用户级：`~/.dsh/skills/`（推荐，所有工作区可用）
-
 ```bash
 mkdir -p ~/.dsh/skills
 cp -r skill/wechat-draft-publisher ~/.dsh/skills/
 ```
 
-DSH 会实时监视该目录，放进去即可被 skill 工具发现，无需重启。
+默认装在用户级目录，所有工作区可用；也可以放项目级 `<项目根>/.dsh/skills/`（项目根 = 最近的 .git 目录），仅该项目可用。放进去后 DSH 会自动发现，无需重启。
+
+> 重复安装或升级：先删除旧目录再复制（如 `rm -rf ~/.dsh/skills/wechat-draft-publisher`），避免嵌套。三个生态都一样。
 
 ## 首次使用前的一次性配置
 
